@@ -6,13 +6,16 @@ using namespace std;
 void Solve(){
   int n;
   cin >> n;
-  
+
   int ans = 0;
   while(n >= 3){
-    int eat = n / 3;
-    ans += eat;
-    n -= (2 * eat);
+    int m1 = n / 3;
+    ans += m1;
+
+    n = (n - (2 * m1));  // m3 becomes n which is carried over to the next day.
+
   }
+
   cout<<ans<<endl;
 }
 
