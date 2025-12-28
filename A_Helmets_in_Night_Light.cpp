@@ -2,49 +2,46 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
+typedef pair<int,int> P;
  
 void Solve(){
     int n,p;
     cin >> n >> p;
-    vector<int> r(n),c(n);
+    vector<int> a(n),b(n);
 
     for(int i = 0;i < n; i++){
-        cin >> r[i];
+        cin >> a[i];
     }
 
     for(int i = 0;i < n; i++){
-        cin >> c[i];
+        cin >> b[i];
     }
 
-    vector<pair<int,int>> v;
-    for(int i = 0;i < n ; i++){
-        pair<int,int> p = {c[i],r[i]};
-        v.push_back(p);
+    priority_queue<P,vector<P>,greater<P>> pq;
+
+    for(int i = 0;i < n; i++){
+        pq.push({b[i],-a[i]});
     }
 
-    sort(begin(v),end(v));
+    int ans = p;
+    int cnt = 1;
 
-    int maximum_cost =  0;
-    int already_shared = 1;
-    for(auto it : v){
-        int sharing_cost = it.first;
-        int can_be_shared = it.second;
+    while(cnt < n && !pq.empty()){
+        int cost = pq.top().first;
+        int num = pq.top().second * -1;
+        pq.pop();
 
-        if(sharing_cost >= p) break;
-
-        if(already_shared + can_be_shared > n){
-            maximum_cost += (n - already_shared) * sharing_cost;
-            already_shared = n;
-            break;
+        if(cost > p){
+            ans += p;
+            cnt++;
         }
         else{
-            maximum_cost += (sharing_cost * can_be_shared);
-            already_shared += can_be_shared;
+            ans += (cost * min(num,n - cnt));
+            cnt += num;
         }
     }
-    maximum_cost += (n - already_shared) * p;
-    cout<<maximum_cost<<endl;
-
+    
+    cout<<ans<<endl;
 }
  
 int32_t main(){
