@@ -23,7 +23,25 @@ using namespace std;
 #define int long long
 
 void Solve() {
-    // your logic
+    int n;
+    cin >> n;
+
+    unordered_set<int> st;
+    for (int i = 0; i < n; i++) {
+        int num;
+        cin >> num;
+        st.insert(num);
+    }
+
+    int x = st.size();
+    int ans = LLONG_MAX;
+
+    for (auto it : st) {
+        if (it >= x) ans = min(ans, it);
+    }
+
+    if (ans == LLONG_MAX) ans = -1;
+    cout << ans << '\n';
 }
 
 int32_t main() {
