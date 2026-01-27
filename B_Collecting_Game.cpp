@@ -46,24 +46,30 @@ void Solve() {
     // your logic
     int n;
     cin >> n;
-    vector<int> a(n);
+    vector<pair<int,int>> a(n);
 
     for(int i = 0;i < n; i++){
-        cin >> a[i];
+        pair<int,int> p = {a[i],i};
+        a.push_back(p);
     }
-    vector<int> temp = a;
-    vector<int> psum(n,0);
     sort(begin(a),end(a));
-    psum[0] = a[0];
+    vector<int> psum(n);
+    psum[0] = a[0].first;
 
-    for(int i = 1;i < n; i++) psum[i] = psum[i-1] + a[i];
+    for(int i = 1;i < n; i++) psum[i] = psum[i-1] + a[i].first;
 
-    vector<int> res;
+    vector<int> res(n);
+    int score = 0;
 
     for(int i = 0;i < n; i++){
-        int ele = temp[i];
-        int idx = bs(ele,psum,a);
-        res.push_back(idx);
+        int ele = a[i].first;
+        int idx = a[i].second;
+
+        score += psum[i];
+        
+        auto lb = lower_bound(begin(psum),end(psum),score+1);
+        int ans = lb - begin(psum);
+        res[idx] = ans;
     }
 
     for(auto ans : res) cout<<ans<<" ";
