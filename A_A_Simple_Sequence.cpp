@@ -24,7 +24,11 @@ using namespace std;
 
 void Solve() {
     // your logic
-    
+    int n;
+    cin >> n;
+
+    for(int i = n; i >= 1; i--) cout<<i<<" ";
+    cout<<endl;
 }
 
 int32_t main() {

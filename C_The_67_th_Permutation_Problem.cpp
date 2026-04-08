@@ -24,7 +24,32 @@ using namespace std;
 
 void Solve() {
     // your logic
-    
+    int n;
+    cin >> n;
+
+    vector<int> ans(3*n,-1);
+    int num = n + 1;
+
+    for(int i = 1;i < 3*n; i += 3){
+        ans[i] = num;
+        num += 2;
+    }
+
+    for(int i = 1; i < 3*n; i += 3){
+        int ele = ans[i];
+        ans[i+1] = ele + 1;
+    }
+
+    int cnt = 1;
+    for(int i = 3*n - 1; i >= 0; i--){
+        if(ans[i] == -1){
+            ans[i] = cnt;
+            cnt++;
+        }
+    }
+
+    for(auto a : ans) cout<<a<<" ";
+    cout<<endl;
 }
 
 int32_t main() {

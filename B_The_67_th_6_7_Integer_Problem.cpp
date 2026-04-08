@@ -24,7 +24,20 @@ using namespace std;
 
 void Solve() {
     // your logic
+    vector<int> a(7);
+    for(int i = 0;i < 7; i++){
+        cin >> a[i];
+    }
     
+    int sum = 0;
+    sort(begin(a),end(a));
+
+    for(int i = 0;i < 6; i++){
+        sum += (a[i] * -1);
+    }
+
+    sum += a[6];
+    cout<<sum<<endl;
 }
 
 int32_t main() {

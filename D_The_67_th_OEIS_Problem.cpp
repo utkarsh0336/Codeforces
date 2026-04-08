@@ -24,6 +24,31 @@ using namespace std;
 
 void Solve() {
     // your logic
+    int n;
+    cin >> n;
+
+    if(n == 1){
+        cout<<3<<endl;
+        return;
+    }
+    if(n == 2){
+        cout<<3<<" "<<3<<endl;
+        return;
+    }
+
+    vector<int> ans(n,1);
+
+    ans[0] = 3;
+    ans[1] = 3;
+
+    int num = 5;
+    for(int i = 2;i < n; i++){
+        ans[i] = num * ans[i-1];
+        num += 2;
+    }
+
+    for(int a : ans) cout<<a<<" ";
+    cout<<endl;
     
 }
 

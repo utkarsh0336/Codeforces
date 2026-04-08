@@ -24,7 +24,20 @@ using namespace std;
 
 void Solve() {
     // your logic
-    
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for(int i = 0;i < n; i++){
+        cin >> a[i];
+    }
+
+    if(n == 1){
+        cout<<n<<endl;
+        return;
+    }
+
+    for(int i = 0;i < n; i++) cout<<2<<" ";
+    cout<<endl;
 }
 
 int32_t main() {

@@ -24,7 +24,9 @@ using namespace std;
 
 void Solve() {
     // your logic
-    
+    int n;
+    cin >> n;
+    cout<<n<<endl;
 }
 
 int32_t main() {

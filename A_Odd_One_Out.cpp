@@ -24,7 +24,8 @@ using namespace std;
 
 void Solve() {
     // your logic
-    
+    cout<<'A';
+    cout<<'1';
 }
 
 int32_t main() {
@@ -33,6 +34,7 @@ int32_t main() {
 
     int t;
     cin >> t;
+
     while (t--) {
         Solve();
     }

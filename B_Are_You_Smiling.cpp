@@ -24,7 +24,11 @@ using namespace std;
 
 void Solve() {
     // your logic
-    
+    string s;
+    cin>>s;
+
+    cout<<"show us your smile!";
+
 }
 
 int32_t main() {
