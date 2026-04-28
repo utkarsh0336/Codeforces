@@ -1,89 +1,63 @@
-/* Utkarsh Sahay */
-
-// Portable replacement for bits/stdc++.h
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <queue>
-#include <stack>
-#include <deque>
-#include <set>
-#include <map>
-#include <unordered_set>
-#include <unordered_map>
-#include <numeric>
-#include <cmath>
-#include <cstring>
-#include <string>
-#include <limits>
-#include <climits>
-
+#include <bits/stdc++.h>
 using namespace std;
+typedef long long ll;
 
-#define int long long
+int main() {
+#ifndef ONLINE_JUDGE
+	freopen("Error.txt", "w", stderr);
+#endif
 
-int bs(int ele,vector<int> &psum,vector<int> &a){
-    int l = 0;
-    int h = psum.size() - 1;
-    int ans = -1;
+	int t = 1; // Number of test cases
+	cin >> t;
 
-    while(l <= h){
-        int mid = l + (h - l) / 2;
+	while (t--) {
+		ll n; // Length of the array
+		cin >> n;
+		ll a; // Temporary variable to store array elements
+		vector<pair<ll, ll>> v; // Vector to store array elements along with their indices
 
-        if(psum[mid] + a[mid]  >= ele){
-            ans = mid;
-            h = mid - 1;
-        } 
-        else{
-            l = mid + 1;
-        }
-    }
+		// Read the array elements and store them with their indices
+		for (int i = 0; i < n; i++) { // O(n)
+			cin >> a;
+			v.push_back({a, i});
+		}
 
-    return ans;
-}
+		vector<ll> pre(n); // Prefix sum array
+		// Sort the vector based on the array elements
+		sort(v.begin(), v.end()); // O(nlogn)
 
-void Solve() {
-    // your logic
-    int n;
-    cin >> n;
-    vector<pair<int,int>> a(n);
+		// Calculate prefix sums
+		pre[0] = v[0].first;
+		for (int i = 1; i < n; i++) { // O(n)
+			pre[i] = pre[i - 1] + v[i].first;
+		}
 
-    for(int i = 0;i < n; i++){
-        pair<int,int> p = {a[i],i};
-        a.push_back(p);
-    }
-    sort(begin(a),end(a));
-    vector<int> psum(n);
-    psum[0] = a[0].first;
+		vector<ll> ans(n); // To store the result for each element
 
-    for(int i = 1;i < n; i++) psum[i] = psum[i-1] + a[i].first;
+		// Calculate the maximum number of additional elements that can be removed
+		for (int i = 0; i < n; i++) { // O(nlogn)
+			int j = i;
+			int found = i;
+			while (j < n) {
+				pair<ll, ll> temp = {pre[j] + 1, INT_MIN};
+				ll idx = lower_bound(v.begin(), v.end(), temp) - v.begin();
+				idx--;
+				if (idx == j) {
+					break;
+				}
+				found += idx - j;
+				j = idx;
+			}
+			ans[v[i].second] = found;
+		}
 
-    vector<int> res(n);
-    int score = 0;
+		// Output the results for the current test case
+		for (int i = 0; i < n; i++) { // O(n)
+			cout << ans[i] << " ";
+		}
+		cout << endl;
+	}
 
-    for(int i = 0;i < n; i++){
-        int ele = a[i].first;
-        int idx = a[i].second;
-
-        score += psum[i];
-        
-        auto lb = lower_bound(begin(psum),end(psum),score+1);
-        int ans = lb - begin(psum);
-        res[idx] = ans;
-    }
-
-    for(auto ans : res) cout<<ans<<" ";
-    cout<<endl;
-}
-
-int32_t main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    int t;
-    cin >> t;
-    while (t--) {
-        Solve();
-    }
-    return 0;
+	// Time Complexity (TC): O(nlogn)
+	// Space Complexity (SC): O(n)
 }
