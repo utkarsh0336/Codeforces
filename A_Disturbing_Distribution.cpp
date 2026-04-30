@@ -1,6 +1,5 @@
 /* Utkarsh Sahay */
 
-// Portable replacement for bits/stdc++.h
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -22,9 +21,31 @@ using namespace std;
 
 #define int long long
 
+const int MOD = 676767677;
+
 void Solve() {
-    // your logic
-    
+    int n;
+    cin >> n;
+
+    vector<int> a(n);
+
+    int sum = 0;
+
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+
+        if (a[i] > 1) {
+            sum += a[i];
+        }
+    }
+
+    int ans = sum;
+
+    if (a[n - 1] == 1) {
+        ans += 1;
+    }
+
+    cout << ans % MOD << '\n';
 }
 
 int32_t main() {
@@ -33,8 +54,10 @@ int32_t main() {
 
     int t;
     cin >> t;
+
     while (t--) {
         Solve();
     }
+
     return 0;
 }
