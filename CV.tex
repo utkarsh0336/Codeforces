@@ -1,0 +1,177 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage{lipsum}
+
+\pdfstringdefDisableCommands{%
+  \def\color#1{}%
+}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.530in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.45in}
+\addtolength{\textheight}{1in}
+
+\urlstyle{rm}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeItemWithoutTitle}[1]{
+  \item\small{
+    {\vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-3pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% -----------------------------
+%%%%% CV STARTS HERE  %%%%%%
+
+\begin{document}
+
+
+%----------HEADING-----------------
+
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{{\LARGE \color{Blue} Ujjwal Jain}}\\
+ 
+  \href{https://www.linkedin.com/in/ujjwal-jain-3549651b6/}{Linkedin: ujjwal-jain-3549651b6} & {Email: \href{mailto:ujjwaljain604@gmail.com}{ujjwxxxxxxxxxxxx4@gmail.com}}\\
+  \href{https://github.com/UjjwalJain02}{Github: ~~github.com/UjjwalJain02} & {Mobile:~~~+91-63920XXXXX} \\
+\end{tabular*}
+
+%-----------EDUCATION-----------------
+
+\section{\color{BlueViolet} Skills Summary}
+	\resumeSubHeadingListStart
+	\resumeSubItem{\color{Blue} Languages}{~~~~~~~~~~~~\hspace{2pt}C++(Proficient), Python(Decent), JavaScript(Decent), C(Good), PHP(Decent) }
+	\resumeSubItem{\color{Blue} Frameworks}{~~~~~~~~~\hspace{3pt}HTML and CSS(Proficient), Bootstrap(Good), NodeJS(Good), Flutter(Decent)}
+	\resumeSubItem{\color{Blue} Tools/Platforms}{~~~\hspace{2pt}MySQL(Proficient)}
+	\resumeSubItem{\color{Blue} Soft Skills}{~~~~~~~~~~~~\hspace{3pt}Leadership, Problem-Solving Skills, Team Player, Communication, Project Management, Adaptability}
+        \resumeSubHeadingListEnd
+\vspace{-2pt}
+
+\section{\color{BlueViolet} Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {\color{Blue} Lovely Professional University}{Punjab, India}
+      {Bachelor of Technology - Computer Science and Engineering;  CGPA: 8.06}{August 2020 - May 2024*}
+      {\scriptsize \textit{ \footnotesize{\newline{}\textbf{Favorite Courses:} Object Oriented Programming, Data Structures, Analysis Of Algorithms, MERN Full Stack}}}
+      \resumeSubheading
+      {\color{Blue} Rani Laxmi Bai Memorial School}{Indira Nagar, Lucknow}
+      {Intermediate; Percentage: 93\%}{April 2018 - March 2020}
+      {\scriptsize \textit{ \footnotesize{\newline{}\textbf{Favorite Courses:} Physics, Chemistry, Mathematics, Computer Science}}}
+      \resumeSubheading
+      {\color{Blue} Akanksha Children Academy}{Bhitariya, Barabanki}
+      {Matriculation; Percentage: 91\%}{April 2016 - March 2018}
+    \resumeSubHeadingListEnd
+
+\vspace{-2pt}
+\section{\color{BlueViolet} Experience}
+\resumeSubHeadingListStart
+    \resumeSubheading{\color{Blue} Payben Private Limited}{Remote}
+    {Developer}{}
+    \resumeItemListStart
+          \resumeItem{Project Overview}
+          {Re-developed a recharge and bill payment platform for the startup called Payben. This platform provides recharge services, offers guaranteed rewards, and also enables users to become agents and offer mobile recharge services. \newline The application is made available for Android and Web platforms.}
+          % \resumeItem{Tech stacks used}{}
+      \resumeItemListEnd
+\vspace{0pt}
+    \resumeSubheading
+		{\color{Blue} Hackathon: HACKOVERFLOW 5.0}{Remote}
+		{Student Developer}{March 2022}
+		\resumeItemListStart
+        \resumeItem{About}
+          {Participated in collaborative programming        
+          project with a team of 2 people.}
+        \resumeItem{Project Course - Railway Ticket Booking}
+            {Developed a working prototype of a website that could let an individual select his own seat while booking train tickets.}
+        \resumeItem{Tech stacks used}
+          {The project was developed using HTML, CSS, and Javascript.}
+        \resumeItem{Github Repository Link}
+              {\href{https://github.com/UjjwalJain02/Train-seat-booking}{github.com/UjjwalJain02/Train-seat-booking}}
+            \resumeItemListEnd
+
+\vspace{-3pt}
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------------
+\vspace{5pt}
+\section{\color{BlueViolet} Projects}
+\resumeSubHeadingListStart
+\resumeItem{\color{Blue} Payben - Recharge and Bill Payment Platform}{Recharge and bill payment platform based on frameworks like bootstrap by linking them with HTML and CSS, JavaScript for front-end development, MySQL as database, and made use of PHP for backend development.\newline Android application is implemented and developed using MIT App Inventor (provided by Google).\newline Developed APIs to form a smooth interface between database and the platform.\newline
+Tech: HTML, CSS, Javascript, Bootstrap, MySQL, PHP, MIT App Inventor}
+\vspace{2pt}
+\resumeSubItem{\color{Blue} Pocketify - Expense tracker app}{Flutter-based expense tracker app that can be used to keep track of all the daily expenses of an individual. This app keeps an hourly record of expenses, and it also comes along with an in-built calculator.\newline Tech: Flutter, Dart, Widgets: AppBar, Navigator, Container}
+\vspace{2pt}
+\resumeSubItem{\color{Blue} Railway Ticket Booking}{Web based application that permits users to select and reserve seats while booking train tickets.\newline
+Tech: HTML, CSS, Javascript}
+\vspace{2pt}
+\resumeSubHeadingListEnd
+\vspace{-5pt}
+
+\section{\color{BlueViolet} Achievements}
+\resumeSubHeadingListStart
+\vspace{2pt}
+\resumeSubItem{\color{Blue} Secured Global Rank 783rd }{\newline among 21k+ participants in Leetcode Biweekly Contest 96}
+\vspace{2pt}
+\resumeSubItem{\color{Blue} Secured Global Rank 557th }{\newline among 4k+ participants in Starters 76 Div3}
+\vspace{2pt}
+\resumeSubItem{\color{Blue} One among Dean's top 10 \% students at University}{\newline For good academic performance and extra-curricular activities at University.}
+\vspace{2pt}
+\resumeSubItem{\color{Blue} Secured 3rd rank in the Hackathon: HACKOVERFLOW 5.0}{\newline Participated and ranked 3rd in the Hackathon organized by NIT Durgapur .}
+\vspace{2pt}
+\resumeSubItem{\color{Blue} Received letter of appreciation from Mr. Rajnath Singh (Defence Minister of India)}{\newline For exceptional performance in 12th boards .}
+\vspace{2pt}
+\resumeSubHeadingListEnd
+\vspace{-5pt}
+%-----------Awards-----------------
+\section{\color{BlueViolet} Certifications}
+\begin{description}[font=$\bullet$]
+\item {Certification of Complete Interview Preparation - Self-Paced (C++) by GFG.}
+\vspace{-5pt}
+\item {Certificate for Development in Flutter by Programming Pathsala}
+\vspace{-5pt}
+\item {Certification for 100 Days of Code: The Complete Python Pro Bootcamp for 2023 by Dr. Angela Yu (Udemy)}
+\vspace{-5pt}
+\end{description}
+\end{document}
